@@ -1,0 +1,24 @@
+{
+	"name": "Server",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"dependencies": {
+		"jsonwebtoken": "^8.2.1",
+		"koa": "^2.5.0",
+		"koa-body": "^2.5.0",
+		"koa-logger": "^3.2.0",
+		"koa-nunjucks-2": "^3.0.2",
+		"koa-router": "^7.4.0",
+		"koa-static": "^4.0.2",
+		"mysql": "^2.15.0",
+		"trek-captcha": "^0.4.0"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.6.1"
+	},
+	"scripts": {
+		"dev": "nodemon service/index.js"
+	}
+}
