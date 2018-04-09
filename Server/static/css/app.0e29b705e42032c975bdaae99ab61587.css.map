@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.0e29b705e42032c975bdaae99ab61587.css"],"names":[],"mappings":"AACA,KACE,cAAgB,CACjB,AACD,MACE,SAAU,AACV,SAAW,CACZ","file":"app.0e29b705e42032c975bdaae99ab61587.css","sourcesContent":["\nhtml {\n  font-size: 20px;\n}\n#main {\n  margin: 0;\n  padding: 0;\n}\n"]}

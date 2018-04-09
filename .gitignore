@@ -3,7 +3,4 @@
 **/node_modules
 .idea/**
 App/package-lock.json
-Server/logs/**
-Server/static/**
-Server/view/**
 .git
