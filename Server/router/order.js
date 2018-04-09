@@ -27,6 +27,8 @@ function addOrder(router) {
             await orderModel.addOrder(data)
             ctx.body = 'success'
         } catch (err) {
+            console.log(data)
+            console.log(err)
             ctx.throw(500, 'failed when storing')
         }
     })

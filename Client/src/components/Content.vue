@@ -57,7 +57,7 @@
                         </strong>
                         </span>
                         <span style="margin: 0px; box-sizing: border-box; padding: 0px;">电话预定：
-TEL:4008057725 企业电话仅收市话费 放心拨打  </span> </span>
+TEL:18556519120 企业电话仅收市话费 放心拨打  </span> </span>
                     </p>
                     <p></p>
                 </div>
@@ -140,7 +140,7 @@ TEL:4008057725 企业电话仅收市话费 放心拨打  </span> </span>
                                            :data-id="product.id"
                                            :id="'product'+product.id" v-if="index===0">
                                       <input type="radio" name="product" :value="product.price"
-                                             :id="'product'+product.id" v-else>
+                                             :id="'product'+product.id" :data-id="product.id" v-else>
                                     <label :for="'product'+product.id">{{product.name}}</label>
                                 </span>
 
@@ -273,11 +273,11 @@ TEL:4008057725 企业电话仅收市话费 放心拨打  </span> </span>
                         <strong>在线下单</strong></a>
                 </li>
                 <li>
-                    <a href="tel:18971247426">
+                    <a href="tel:18556519120">
                         <strong>电话咨询</strong></a>
                 </li>
                 <li>
-                    <a href="sms:18971247426">
+                    <a href="sms:18556519120">
                         <strong>短信订购</strong></a>
                 </li>
             </ul>
@@ -370,13 +370,13 @@ TEL:4008057725 企业电话仅收市话费 放心拨打  </span> </span>
                     alert('请填写详细地址')
                     return
                 }
-
                 this.buttonStatus = true
+                const self = this
                 axios.post('/order', {
                     data: {
                         product: {
-                            id: this.choosen,
-                            num: this.num
+                            id: self.choosen,
+                            num: self.num
                         },
                         user: this.userInfo
                     }

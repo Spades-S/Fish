@@ -15,15 +15,16 @@ async function addOrder(data) {
             message: message
         }
     } = data
-
-    const result = await query(`INSERT INTO T_ORDER (productID, productNum, name, tel, province, address, message) VALUES (${productID}, ${productNum},'${name}','${tel}','${province}','${address}','${message}')`)
+    const date = new Date()
+    const time = `${date.getFullYear()}/${date.getMonth() + 1}/${new Date().getDate()}   ${new Date().getHours()}:${new Date().getMinutes()}`
+    const result = await query(`INSERT INTO T_ORDER (productID, productNum, name, tel, province, address, message, time) VALUES (${productID}, ${productNum},'${name}','${tel}','${province}','${address}','${message}','${time}')`)
     return result
 }
 
 async function getOrdersByPage(filtered, pageSize, pageNum) {
     const offset = (pageNum - 1) * pageSize
     let queryString = `SELECT Product.name as productName,
-                         o.id, o.productNum, o.name, o.tel, o.province,o.address,o.message,o.status 
+                         o.id, o.productNum, o.name, o.tel, o.province,o.address,o.message,o.status,o.time
                          FROM T_PRODUCT Product  JOIN T_ORDER o ON Product.id = o.productID `
     if (filtered === 'true') {
         queryString += ` WHERE status = 0  ORDER BY id DESC LIMIT ${pageSize} OFFSET ${offset}  `

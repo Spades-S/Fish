@@ -2,25 +2,27 @@
     <div class="container">
         <el-row :gutter="5" class="head">
             <el-col :span="1">序号</el-col>
-            <el-col :span="4">产品名</el-col>
+            <el-col :span="3">产品名</el-col>
             <el-col :span="2">订购数量</el-col>
             <el-col :span="2">姓名</el-col>
             <el-col :span="3">联系电话</el-col>
             <el-col :span="2">地区</el-col>
-            <el-col :span="5">地址</el-col>
+            <el-col :span="4">地址</el-col>
             <el-col :span="3">留言</el-col>
+            <el-col :span="2">时间</el-col>
             <el-col :span="2">订单状态</el-col>
         </el-row>
         <template v-for="(order,index) in orders">
             <el-row :gutter="5" class="order-item">
                 <el-col :span="1">{{index + 1}}</el-col>
-                <el-col :span="4">{{order.productName}}</el-col>
+                <el-col :span="3">{{order.productName}}</el-col>
                 <el-col :span="2">{{order.productNum}}</el-col>
                 <el-col :span="2">{{order.name}}</el-col>
                 <el-col :span="3">{{order.tel}}</el-col>
                 <el-col :span="2">{{order.province}}</el-col>
-                <el-col :span="5">{{order.address}}</el-col>
+                <el-col :span="4">{{order.address}}</el-col>
                 <el-col :span="3">{{order.message}}</el-col>
+                <el-col :span="2">{{order.time}}</el-col>
                 <el-col :span="2">
                     <el-switch
                             v-model="order.status"
@@ -51,7 +53,7 @@
     import Bus from '../assets/Bus'
     import { Notification } from 'element-ui'
 
-    //    axios.defaults.baseURL = 'http://localhost:3000'
+//    axios.defaults.baseURL = 'http://localhost:3000'
     axios.defaults.withCredentials = true
 
     export default {
